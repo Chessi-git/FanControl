@@ -7,6 +7,8 @@
 #include <ky-040.h>   // Encoder Lbi
 
 
+#define VersionString F("Fan Control V0.4 (c) by chessi soft")
+#define VersionStringSmall F("** FanControl V1.0 **")
 /*
   Software serial multple serial test
  */
@@ -228,7 +230,7 @@ void setup()
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
   }
-  Serial.println(F("Fan Control V0.4 (c) by chessi soft"));
+  Serial.println(VersionString);
 
   // Add the two rotaries for the first encoder.
   // Define a rotary to go from 0 to 100 in increments of 5. Initialize it to last stored. No rollover
@@ -274,7 +276,7 @@ void setup()
   display.setTextSize(1);             // Normal 1:1 pixel scale
   display.setTextColor(SSD1306_WHITE);        // Draw white text
   display.setCursor(0,0);             // Start at top-left corner
-  display.println(F("** FanControl V1.0 **"));
+  display.println(VersionStringSmall);
   display.println(F("(c) '20 by Chessi Soft"));
   display.display();
   delay(1000); // Pause for 1 second
